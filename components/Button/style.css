@@ -1,0 +1,56 @@
+.btn {
+	@apply border inline-flex items-center justify-center gap-2 font-bold text-center rounded-xs shadow-sm cursor-pointer tracking-wide no-underline transition transform hover:shadow-md hover:-translate-y-px active:shadow-none active:translate-y-px focus:ring focus:ring-offset-2 focus:outline-none;
+}
+
+/**
+ * Colours
+ */
+.btn[data-variant="primary"] {
+	@apply text-primary-contrast bg-primary border-black/20 focus:ring-gray-200 hover:text-white;
+}
+
+.btn[data-variant="secondary"] {
+	@apply text-secondary-contrast bg-secondary border-black/20 focus:ring-gray-200 hover:text-white;
+}
+
+.btn[data-variant="tiertiery"] {
+	@apply text-tertiary-contrast bg-tertiary border-black/20 focus:ring-gray-200 hover:text-white;
+}
+
+.btn[data-variant="highlight"] {
+	@apply text-white bg-highlight border-black/20 focus:ring-gray-200 hover:text-white;
+}
+
+.btn[data-variant="white"] {
+	@apply text-gray-800 bg-white border-gray-200 focus:ring-gray-100 hover:text-black;
+}
+
+.btn[data-variant="black"] {
+	@apply text-gray-200 bg-black border-white/20 focus:ring-gray-200 hover:text-white;
+}
+
+/**
+ * Sizes
+ */
+.btn[data-size="sm"] {
+	@apply text-sm py-1 px-4;
+}
+
+.btn[data-size="md"] {
+	@apply text-sm py-2 px-6;
+}
+
+.btn[data-size="lg"] {
+	@apply py-3 px-8;
+}
+
+.btn[data-size="square"] {
+	@apply min-w-0 aspect-square h-auto;
+}
+
+/**
+ * Icon Position
+ */
+.btn[data-icon-position="end"] {
+	@apply flex-row-reverse;
+}

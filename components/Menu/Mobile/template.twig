@@ -1,0 +1,83 @@
+<div
+	:data-state="menuIsOpen ? 'open' : 'closed'"
+	@keyup.escape="menuIsOpen = false"
+	class="menu-mobile-container"
+>
+	<nav
+		x-data="{ activeSubMenu: null }"
+		:data-state="menuIsOpen ? 'open' : 'closed'"
+		aria-label="Main menu"
+		class="menu-mobile"
+		id="main-menu"
+		role="navigation"
+	>
+		<ul
+			class="primary-menu"
+			role="list"
+			data-state="active"
+			:data-state="activeSubMenu === null ? 'active' : 'inactive'"
+		>
+			{% for key, link in menu %}
+				{% set subMenuClickHandler = link.children ? "@click.prevent=\"activeSubMenu = '" ~ key ~ "'\"" : "" %}
+				<li>
+					{% set linkIsActive = link.post_ID == get_the_ID() %}
+					<a
+						{{ subMenuClickHandler | raw }}
+						class="menu__link"
+						href="{{ link.url }}"
+						data-active="{{ linkIsActive ? 'true' : 'false' }}"
+						x-ref="link_{{ key }}"
+					>
+						{{ link.title | raw }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+		{% for key, link in menu %}
+			{% if link.children %}
+			<ul
+				aria-label="{{ link.title }} menu"
+				role="list"
+				class="sub-menu"
+				x-show="activeSubMenu === '{{ key }}'"
+				x-transition
+				x-effect="activeSubMenu === '{{ key }}' ? $refs.back_{{ key }}.focus() : null"
+			>
+				<li>
+					<button
+						class="menu__link sub-menu__back flex items-center gap-3"
+						type="button"
+						x-on:click="activeSubMenu = null; $refs.link_{{ key }}.focus()"
+						x-ref="back_{{ key }}"
+					>
+						<Icon name="arrow-left" class="size-xl" />
+						<span class="tracking-wide">Back</span>
+					</button>
+				</li>
+				{% for child in link.children %}
+					<li>
+						{% set childIsActive = child.post_ID == get_the_ID() %}
+						<a
+							class="menu__link"
+							href="{{ child.url }}"
+							data-active="{{ childIsActive ? 'true' : 'false' }}"
+						>
+							<span>{{ child.title | raw }}</span>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		{% endfor %}
+
+		{% if showPhoneNumber %}
+			<div class="menu-mobile__phone">
+				<p class="text-gray-30 uppercase text-sm tracking-wide">
+					Call Us
+				</p>
+				<a href="tel:{{ globals.phone }}">{{ globals.phone }}</a>
+			</div>
+		{% endif %}
+	</nav>
+</div>

@@ -1,0 +1,37 @@
+<div class="block-area block-area--{{ name }} {{ preview ? 'relative' : '' }}">
+    {% if preview and not block_areas %}
+        <div class="border border-dashed rounded m-4 p-20 text-center">
+            <div class="flex flex-col items-center justify-center gap-6">
+                <Icon name="layout" class="w-8 h-8" />
+                <div class="flow flow-space-2">
+                    <h3>Select a Block Area from the Sidebar.</h3>
+                    <p class="max-w-xs text-balance text-sm text-gray-500">Website visitors won't see this message, no content will be shown here unless you select a Block Area.</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if preview and block_areas %}
+        {% for block_area in block_areas %}
+            <div class="group relative">
+                <div class="z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center absolute inset-0 opacity-0 transition group-hover:opacity-100">
+                    <div class="flow flow-space-3 max-w-sm text-white text-center">
+                        <p>This content is part of the <code>`{{ name }}`</code> Block Area. That means you can edit it once and it will update everywhere it appears.</p>
+                        <a class="button button-primary" href="/wp-admin/post.php?post={{ block_area.id }}&action=edit">Edit this content</a>
+                    </div>
+                </div>
+                <div class="pointer-events-none">
+                    <Blocks>
+                        {{ block_area.content | raw }}
+                    </Blocks>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for block_area in block_areas %}
+            <Blocks>
+                {{ block_area.content | raw }}
+            </Blocks>
+        {% endfor %}
+    {% endif %}
+</div>

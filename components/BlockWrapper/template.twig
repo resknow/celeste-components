@@ -1,0 +1,5 @@
+{% set TagName = block.attributes.tagName ?? 'div' %}
+
+<{{ TagName }} {{ attributes | raw }}>
+    {{ children | raw }}
+</{{ TagName }}>

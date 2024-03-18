@@ -1,0 +1,15 @@
+<dismissable-element id="{{ id }}">
+    <div
+        class="flow flow-space-xs max-w-96 {{ preview ? '' : 'fixed z-40 bottom-md left-md right-md' }}"
+        role="dialog"
+        aria-labelledby="{{ id }}-label"
+        aria-describedby="{{ id }}-description"
+    >
+        <button type="button" data-close>
+            <span class="sr-only">Close</span>
+            <Icon name="close" />
+        </button>
+
+        {{ children | raw }}
+    </div>
+</dismissable-element>

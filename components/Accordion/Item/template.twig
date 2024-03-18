@@ -1,0 +1,27 @@
+<div
+    class="AccordionItem grid border px-md py-sm rounded-xs"
+    x-bind:id="`${id}-{{ key }}`"
+    x-bind:class="{ 'AccordionItem--open shadow-lg': selectedItem === {{ key }} }"
+>
+    <h3>
+        <button
+            x-bind:aria-controls="`${id}-{{ key }}`"
+            x-on:click="selectedItem = selectedItem === {{ key }} ? null : {{ key }}"
+            type="button"
+            class="grid grid-cols-[1fr_1.5rem] items-start justify-between text-left w-full"
+        >
+            <span>{{ title }}</span>
+            <div class="transition duration-300" x-bind:class="{ 'rotate-180': selectedItem === {{ key }} }">
+                <Icon name="caret-down" />
+            </div>
+        </button>
+    </h3>
+    <div
+        x-bind:aria-expanded="selectedItem === {{ key }}"
+        class="overflow-hidden"
+    >
+        <div class="flow flow-space-3 pt-sm">
+            {{ content | raw }}
+        </div>
+    </div>
+</div>

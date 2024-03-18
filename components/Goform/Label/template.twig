@@ -1,0 +1,8 @@
+<label class="Goform__label {{ class }}" for="{{ for }}">
+    {{ content | raw }}
+    {% if not required %}
+        <span class="Goform__field-optional-marker size-xs uppercase text-gray-500 weight-normal">
+            Optional
+        </span>
+    {% endif %}
+</label>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+	<Layout.Head />
+	<body {{ body_class(class) }}>
+		{{ wp_body_open() }}
+
+		<SkipLink />
+		<Header />
+
+		{{ children | raw }}
+
+		<Footer />
+		<BackToTop />
+
+		{{ wp_footer() }}
+	</body>
+</html>

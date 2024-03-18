@@ -1,0 +1,13 @@
+<article class="SearchResult prose">
+	<header>
+		<h2 class="flex items-center justify-between h4">
+			<a href="{{ post.permalink }}">{{ post.post_title }}</a>
+			{% if icon_exists(post.post_type) %}
+				<Icon class="text-gray-500" :name="post.post_type" />
+			{% endif %}
+		</h2>
+	</header>
+	{% if post.post_excerpt %}
+		<p class="text-sm text-gray-700">{{ post.post_excerpt }} <a href="{{ post.permalink }}">read more</a></p>
+	{% endif %}
+</article>

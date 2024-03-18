@@ -1,0 +1,8 @@
+.AccordionItem {
+    grid-template-rows: auto 0fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.AccordionItem--open {
+    grid-template-rows: auto 1fr;
+}
