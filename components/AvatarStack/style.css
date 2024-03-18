@@ -1,0 +1,19 @@
+.AvatarStack__image:not(:first-child) {
+	transition: transform 0.2s, opacity 0.2s;
+}
+
+.AvatarStack__image {
+	z-index: 2;
+}
+
+.AvatarStack:has(.AvatarStack__image:hover) .AvatarStack__image:not(:hover) {
+	opacity: 0.5;
+	transform: scale(0.95);
+	z-index: 1;
+}
+
+/** Tippy Customisations */
+.tippy-box {
+	background-color: var(--color-secondary);
+	color: var(--color-secondary-contrast);
+}

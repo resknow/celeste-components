@@ -1,0 +1,33 @@
+{% if avatars %}
+    <div class="AvatarStack max-w-md flex flex-wrap items-center gap-1">
+        {% for member in avatars %}
+            {% set tooltipContent %}
+                <strong class="text-primary">{{ member.post_title }}</strong> {{ member.fields.role }}
+            {% endset %}
+
+            <div
+                x-data
+                @load.window="tippy($refs.image, { content: `{{ tooltipContent | trim }}`, allowHTML: true })"
+                class="AvatarStack__image bg-primary-contrast rounded-full w-xl h-xl p-1"
+            >
+                {% if member.fields.photo.sizes.thumbnail %}
+                <img
+                    x-ref="image"
+                    class="w-full h-auto rounded-full aspect-square object-cover object-center"
+                    src="{{ member.fields.photo.sizes.thumbnail }}"
+                    width="{{ member.fields.photo.sizes['thumbnail-width'] }}"
+                    height="{{ member.fields.photo.sizes['thumbnail-height'] }}"
+                    alt="Profile photo of {{ member.post_title }}"
+                >
+                {% else %}
+                    <div
+                        x-ref="image"
+                        class="bg-primary font-bold rounded-full w-full h-auto aspect-square flex items-center justify-center"
+                    >
+                        {{ member.initials }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
