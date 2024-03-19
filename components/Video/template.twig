@@ -1,0 +1,7 @@
+<div class="Video {{ class }}">
+    <video {{ attributes | raw }}>
+        {% if multiple_src %}
+            {{ src | raw }}
+        {% endif %}
+    </video>
+</div>
