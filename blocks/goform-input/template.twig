@@ -1,0 +1,35 @@
+<BlockWrapper :attributes="attributes" :block="block">
+	{% if fields.type == "textarea" %}
+		<Goform.TextareaInput
+			:name="fields.name"
+			:label="fields.label"
+			:required="fields.required"
+		/>
+	{% elseif fields.type == "select" %}
+		<Goform.SelectInput
+			:name="fields.name"
+			:label="fields.label"
+			:required="fields.required"
+			:choices="fields.choices"
+		/>
+	{% elseif fields.type == "hidden" %}
+
+		{% if is_preview %}
+			<p class="border border-dashed rounded-xs py-1 px-3 text-gray-600 font-mono text-sm">Hidden Input <code>`{{ fields.name }}`</code></p>
+		{% endif %}
+
+		<Goform.HiddenInput
+			:name="fields.name"
+			:label="fields.label"
+			:type="fields.type"
+			:required="fields.required"
+		/>
+	{% else %}
+		<Goform.TextInput
+			:name="fields.name"
+			:label="fields.label"
+			:type="fields.type"
+			:required="fields.required"
+		/>
+	{% endif %}
+</BlockWrapper>

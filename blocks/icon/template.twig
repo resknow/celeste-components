@@ -1,0 +1,5 @@
+{% if fields.icon and fields.icon != "none" %}
+    <BlockWrapper :attributes="attributes" :block="block">
+        <Icon :name="fields.icon" :class="block.className" />
+    </BlockWrapper>
+{% endif %}
