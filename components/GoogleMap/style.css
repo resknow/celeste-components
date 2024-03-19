@@ -1,0 +1,4 @@
+.GoogleMap iframe {
+    aspect-ratio: var(--google-map-aspect-ratio, 16 / 9);
+    width: 100%;
+}

@@ -1,0 +1,6 @@
+<div class="GoogleMap {{ class }}">
+    <iframe
+        src="https://www.google.com/maps/embed/v1/place?q={{ address | url_encode }}&key={{ globals.google_maps_api_key }}"
+    >
+    </iframe>
+</div>
