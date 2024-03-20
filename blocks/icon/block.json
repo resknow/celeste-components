@@ -32,5 +32,20 @@
 	"acf": {
 		"mode": "preview",
 		"renderCallback": "render_acf_block"
+	},
+	"version": "1.0.0",
+	"celeste": {
+		"requires": [
+			{
+				"type": "component",
+				"name": "BlockWrapper",
+				"version": "1.0.0"
+			},
+			{
+				"type": "component",
+				"name": "Icon",
+				"version": "1.0.0"
+			}
+		]
 	}
 }
