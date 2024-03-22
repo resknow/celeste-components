@@ -1,0 +1,38 @@
+{% set colors = {
+    facebook: '#1877f2',
+    x: '#000',
+    instagram: '#c13584',
+    linkedin: '#2867b2',
+    youtube: '#ff0000',
+    pinterest: '#bd081c',
+    snapchat: '#fffc00',
+    tiktok: '#000000',
+    whatsapp: '#25d366',
+    telegram: '#0088cc',
+    signal: '#2596be',
+    discord: '#5865f2',
+    twitch: '#6441a5',
+    reddit: '#ff4500',
+    medium: '#02b875',
+    tumblr: '#35465d',
+    etsy: '#f2581e'
+} %}
+
+{% if links %}
+    <div
+        class="FloatingContactLinks fixed right-0 top-2xl bg-white rounded-l-sm p-2 shadow-xl flow flow-space-2"
+        data-animate="{{ animate ? 'true' : 'false' }}"
+    >
+        {% for site in links %}
+            {% set slug = site.name | lower %}
+            <a
+                class="bg-[var(--icon-color)] flex items-center justify-center w-md aspect-square rounded-xs"
+                href="{{ site.url}}"
+                style="--icon-color: {{ colors[slug] ?? 'var(--color-primary)' }}"
+            >
+                <Icon :name="slug" class="text-white w-sm h-sm" />
+                <span class="sr-only">{{ site.name }}</span>
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}

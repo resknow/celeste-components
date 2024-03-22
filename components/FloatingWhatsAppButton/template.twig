@@ -1,0 +1,8 @@
+{% if number %}
+    <a class="FloatingWhatsAppButton" href="https://wa.me/{{ number | replace({ ' ': '' }) }}">
+        {% if icon_exists('whatsapp') %}
+            <Icon name="whatsapp" />
+        {% endif %}
+        <span>WhatsApp Us</span>
+    </a>
+{% endif %}

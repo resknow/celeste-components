@@ -1,0 +1,13 @@
+.FloatingContactLinks[data-animate="true"] {
+    animation: revealFloatingContactLinks 1s ease-out;
+    animation-delay: 2s;
+}
+
+@keyframes revealFloatingContactLinks {
+    0% {
+        transform: scale(0.9) translateX(130%);
+    }
+    100% {
+        transform: scale(1) translateX(0);
+    }
+}
