@@ -1,5 +1,6 @@
 {
 	"name": "Accordion",
 	"version": "1.0.0",
-	"requires": [{ "name": "AccordionItem", "type": "component", "version": "1.0.0" }]
+	"requires": [{ "name": "AccordionItem", "type": "component", "version": "1.0.0" }],
+	"celeste_version": "1.0.0"
 }

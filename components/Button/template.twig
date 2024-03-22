@@ -2,15 +2,16 @@
 
 <{{ tag_name }}
 	class="btn {{ class }}"
-	data-variant="{{ variant ?? 'primary' }}"
-	data-size="{{ size ?? 'md' }}"
-	data-icon-position="{{ iconPosition ?? 'end' }}"
+	data-variant="{{ variant }}"
+	data-size="{{ size }}"
+	data-icon-position="{{ iconPosition }}"
 	data-has-icon="{{ icon ? 'true' : 'false' }}"
 	href="{{ href }}"
 	type="{{ type }}"
+	{{ attributes | raw }}
 >
 	{% if icon %}
 		<Icon :name="icon" class="w-5 h-5" />
 	{% endif %}
-	{{ children }}
+	{{ children | raw }}
 </{{ tag_name }}>

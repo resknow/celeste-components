@@ -1,0 +1,17 @@
+<snap-to class="SnapTo {{ class }}">
+    <div data-content class="flex items-start gap-md">
+        {{ children | raw }}
+    </div>
+    {% if withArrows %}
+        <div class="{{ withArrows ? 'hidden lg:flex' : 'hidden' }} flex-wrap items-center gap-xs px-container">
+            <button data-prev data-size="md" class="btn" type="button">
+                <Icon name="arrow-left" />
+                <span class="sr-only">Previous</span>
+            </button>
+            <button data-next data-size="md" class="btn" type="button">
+                <Icon name="arrow-right" />
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+    {% endif %}
+</snap-to>
