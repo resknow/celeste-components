@@ -27,7 +27,7 @@
             {% set slug = site.name | lower %}
             <a
                 class="bg-[var(--icon-color)] flex items-center justify-center w-md aspect-square rounded-xs"
-                href="{{ site.url}}"
+                href="{{ site.url }}"
                 style="--icon-color: {{ colors[slug] ?? 'var(--color-primary)' }}"
             >
                 <Icon :name="slug" class="text-white w-sm h-sm" />

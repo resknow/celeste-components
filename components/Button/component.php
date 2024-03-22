@@ -1,5 +1,12 @@
 <?php
 
+use Resknow\Assets;
+
+// Always enqueue the Button styles because they can be used outside of the component
+add_action( 'wp_enqueue_scripts', function() {
+    Assets::component( 'Button', 'style' );
+} );
+
 add_filter( 'twilight.component.Button', function( $context ) {
 
     /**

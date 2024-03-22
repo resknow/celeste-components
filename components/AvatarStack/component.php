@@ -33,7 +33,7 @@ add_filter( 'twilight.component.AvatarStack', function( $context ) {
 
     if ( isset( $context['avatars'] ) ) {
         $context['avatars'] = array_map( function( $avatar ) {
-            $avatar->initials = AvatarStack_get_initials_from_name( $avatar->post_title );
+            $avatar['initials'] = AvatarStack_get_initials_from_name( $avatar['name'] );
             return $avatar;
         }, $context['avatars'] );
     }

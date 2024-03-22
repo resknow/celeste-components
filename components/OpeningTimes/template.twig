@@ -1,12 +1,18 @@
-{% if globals.opening_times %}
+{% if openingTimes %}
     <div class="OpeningTimes">
         <ul class="flow flow-space-xs" role="list">
-            {% for day, item in globals.opening_times %}
+            {% for day, item in openingTimes %}
                 <li
                     class="OpeningTimes__item relative flex items-center justify-between {{ today == day ? 'font-bold' : '' }}"
                 >
                     <p class="bg-white z-20 pr-3">{{ day | capitalize }}</p>
-                    <p class="bg-white z-20 pl-3">{{ item.open }} - {{ item.close }}</p>
+                    <p class="bg-white z-20 pl-3">
+                        {% if item.closed %}
+                            Closed
+                        {% else %}
+                            {{ item.open }} - {{ item.close }}
+                        {% endif %}
+                    </p>
                 </li>
             {% endfor %}
         </ul>

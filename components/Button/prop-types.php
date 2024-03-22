@@ -5,12 +5,13 @@ return [
     'href' => [ 'type' => 'string' ],
     'variant' => [
         'type' => 'enum',
-        'values' => [ 'primary', 'secondary', 'tertiary' ],
+        'values' => [ 'primary', 'secondary', 'tertiary', 'white', 'black' ],
         'default' => 'primary'
     ],
     'size' => [
         'type' => 'enum',
-        'values' => [ 'sm', 'md', 'lg' ]
+        'values' => [ 'sm', 'md', 'lg' ],
+        'default' => 'md'
     ],
     'icon' => [ 'type' => 'string' ],
     'iconPosition' => [
