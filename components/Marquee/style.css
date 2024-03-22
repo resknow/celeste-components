@@ -21,6 +21,10 @@
     animation: MarqueeScroll var(--marquee-speed, 40s) linear infinite;
 }
 
+.Marquee[data-pause-on-hover="true"]:hover .Marquee__content {
+    animation-play-state: paused;
+}
+
 @keyframes MarqueeScroll {
     from {
         transform: translateX(0);
