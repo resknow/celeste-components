@@ -9,4 +9,4 @@ class EmailAddress extends HTMLElement {
 	}
 }
 
-customElements.get('email-address') || customElements.define('email-address', EmailAddress);
+customElements.get('celeste-email-address') || customElements.define('celeste-email-address', EmailAddress);
