@@ -6,8 +6,8 @@
         var(--AccordionItem--border-style, solid)
         var(--AccordionItem--border-color, var(--color-gray-200));
     padding:
-        var(--AccordionItem--padding-y, var(--space-sm))
-        var(--AccordionItem--padding-x, var(--space-md));
+        var(--AccordionItem--padding-y, var(--space-xs))
+        var(--AccordionItem--padding-x, var(--space-sm));
     grid-template-rows: auto 0fr;
     transition: grid-template-rows 0.3s ease-in-out;
 }

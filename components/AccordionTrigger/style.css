@@ -1,3 +1,7 @@
+.AccordionTrigger {
+    font-size: var(--AccordionTrigger--heading-size, var(--size-base));
+}
+
 .AccordionTrigger__button {
     display: grid;
     grid-template-columns: 1fr 1.5rem;
@@ -8,10 +12,18 @@
 }
 
 .AccordionTrigger__icon {
+    font-size: var(--AccordionTrigger--icon-size, var(--size-base));
+    justify-self: end;
     transition: rotate var(--AccordionTrigger--rotate-duration-close, 0.5s) ease;
 }
 
+.AccordionTrigger__icon svg {
+    width: 1em;
+    height: 1em;
+}
+
 .AccordionItem--open .AccordionTrigger__icon {
-    transition: rotate var(--AccordionTrigger--rotate-duration-open, 0.3s) ease;
-    rotate: var(--AccordionTrigger--rotate-open, 180deg);
+    transform-origin: center;
+    transition: rotate var(--AccordionTrigger--icon-rotate-duration-open, 0.3s) ease;
+    rotate: var(--AccordionTrigger--icon-rotate-open, 180deg);
 }
