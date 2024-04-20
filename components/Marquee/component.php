@@ -2,6 +2,10 @@
 
 add_filter( 'twilight.component.Marquee', function( $context ) {
 
+    [ $props, $rest ] = props( 'Marquee', $context, include __DIR__ . '/prop-types.php' );
+    $context = array_merge( $context, $props );
+    $context['attributes'] = attributes($rest);
+
     $inline_styles = [];
 
     if ( isset( $context['gap'] ) ) {

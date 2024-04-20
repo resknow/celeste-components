@@ -1,4 +1,9 @@
-<div class="Marquee" {{ styles | raw }} data-pause-on-hover="{{ pauseOnHover ? 'true' : 'false' }}">
+<div
+    class="Marquee {{ class }}"
+    data-pause-on-hover="{{ pauseOnHover ? 'true' : 'false' }}"
+    {{ styles | raw }}
+    {{ attributes | raw }}
+>
     <ul class="Marquee__content">
         {{ children | raw }}
     </ul>
