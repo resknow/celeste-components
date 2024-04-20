@@ -1,5 +1,5 @@
-{% set TagName = block.attributes.tagName ?? 'div' %}
+{% set tagName = block.attributes.tagName ?? 'div' %}
 
-<{{ TagName }} {{ attributes | raw }}>
+<{{ tagName }} {{ attributes | raw }}>
     {{ children | raw }}
-</{{ TagName }}>
+</{{ tagName }}>

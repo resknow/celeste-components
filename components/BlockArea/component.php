@@ -1,6 +1,11 @@
 <?php
 
-add_filter( 'twml.component.BlockArea', function( $context ) {
+add_filter( 'twilight.component.BlockArea', function( $context ) {
+
+    [ $props, $rest ] = props( 'BlockArea', $context, include __DIR__ . '/prop-types.php' );
+    $context = array_merge( $context, $props );
+    $context['attributes'] = attributes($rest);
+
 	$block_area = $context['name'] ?? '';
 
     if ( is_null($block_area) || $block_area === '' || $block_area === 'none' ) return $context;
