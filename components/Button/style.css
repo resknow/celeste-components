@@ -1,56 +1,101 @@
-.btn {
-	@apply border inline-flex items-center justify-center gap-2 font-bold text-center rounded-xs shadow-sm cursor-pointer tracking-wide no-underline transition transform hover:shadow-md hover:-translate-y-px active:shadow-none active:translate-y-px focus:ring focus:ring-offset-2 focus:outline-none;
-}
+:is(.btn, button, button[type=submit], button[type=reset], input[type=submit]) {
+	align-items: center;
+	background: var(--btn--background, var(--color-gray-100));
+	border-radius: var(--btn--border-radius, var(--radius-xs));
+	border: var(--btn--border-thickness, 1px) solid var(--btn--border-color, transparent);
+	box-shadow: var(--btn--shadow, var(--shadow-sm));
+	color: var(--btn--color, var(--color-gray-800));
+	cursor: pointer;
+	display: inline-flex;
+	font-size: var(--btn--font-size, var(--size-base));
+	font-weight: var(--btn--font-weight, var(--weight-bold));
+	gap: var(--btn--gap, var(--space-2));
+	justify-content: center;
+	letter-spacing: var(--btn--tracking, var(--tracking-wide));
+	padding: var(--btn--padding-y, var(--space-2)) var(--btn--padding-x, var(--space-6));
+	text-align: center;
+	text-decoration: none;
+	transform: var(--btn--transform, none);
+	transition: var(--btn--transition, transform 0.3s ease, box-shadow 0.3s ease);
 
-/**
- * Colours
- */
-.btn[data-variant="primary"] {
-	@apply text-primary-contrast bg-primary border-black/20 focus:ring-gray-200 hover:text-white;
-}
+	&:hover {
+		--btn--shadow: var(--shadow-md);
+		--btn--transform: translateY(-1px);
+	}
 
-.btn[data-variant="secondary"] {
-	@apply text-secondary-contrast bg-secondary border-black/20 focus:ring-gray-200 hover:text-white;
-}
+	&:active {
+		--btn--shadow: var(--shadow-none);
+		--btn--transform: translateY(1px);
+	}
 
-.btn[data-variant="tiertiery"] {
-	@apply text-tertiary-contrast bg-tertiary border-black/20 focus:ring-gray-200 hover:text-white;
-}
+	&:focus {
+		--btn--shadow: none;
+		outline: var(--btn--ring-thickness, 2px) solid var(--btn--ring-color, var(--color-primary));
+		outline-offset: var(--btn--ring-offset, 2px);
+	}
 
-.btn[data-variant="highlight"] {
-	@apply text-white bg-highlight border-black/20 focus:ring-gray-200 hover:text-white;
-}
+	&[data-icon-position="end"] {
+		flex-direction: row-reverse;
+	}
 
-.btn[data-variant="white"] {
-	@apply text-gray-800 bg-white border-gray-200 focus:ring-gray-100 hover:text-black;
-}
+	/** Variants */
+	&[data-variant="primary"] {
+		--btn--background: var(--color-primary);
+		--btn--border-color: rgba(0, 0, 0, 0.2);
+		--btn--color: var(--color-primary-contrast);
+		--btn--ring-color: var(--color-primary);
+	}
 
-.btn[data-variant="black"] {
-	@apply text-gray-200 bg-black border-white/20 focus:ring-gray-200 hover:text-white;
-}
+	&[data-variant="secondary"] {
+		--btn--background: var(--color-secondary);
+		--btn--border-color: rgba(0, 0, 0, 0.2);
+		--btn--color: var(--color-secondary-contrast);
+		--btn--ring-color: var(--color-secondary);
+	}
 
-/**
- * Sizes
- */
-.btn[data-size="sm"] {
-	@apply text-sm py-1 px-4;
-}
+	&[data-variant="tertiary"] {
+		--btn--background: var(--color-tertiary);
+		--btn--border-color: rgba(0, 0, 0, 0.2);
+		--btn--color: var(--color-tertiary-contrast);
+		--btn--ring-color: var(--color-tertiary);
+	}
 
-.btn[data-size="md"] {
-	@apply text-sm py-2 px-6;
-}
+	&[data-variant="highlight"] {
+		--btn--background: var(--color-highlight);
+		--btn--border-color: rgba(0, 0, 0, 0.2);
+		--btn--color: var(--color-black);
+		--btn--ring-color: var(--color-highlight);
+	}
 
-.btn[data-size="lg"] {
-	@apply py-3 px-8;
-}
+	&[data-variant="base"] {
+		--btn--background: var(--color-white);
+		--btn--border-color: rgba(0, 0, 0, 0.2);
+		--btn--color: var(--color-black);
+		--btn--ring-color: var(--color-gray-700);
+	}
 
-.btn[data-size="square"] {
-	@apply min-w-0 aspect-square h-auto;
-}
+	&[data-variant="contrast"] {
+		--btn--background: var(--color-black);
+		--btn--border-color: rgba(0, 0, 0, 0.2);
+		--btn--color: var(--color-white);
+		--btn--ring-color: var(--color-black);
+	}
 
-/**
- * Icon Position
- */
-.btn[data-icon-position="end"] {
-	@apply flex-row-reverse;
+	/** Sizes */
+	&[data-size="sm"] {
+		--btn--font-size: var(--size-sm);
+		--btn--padding-x: var(--space-4);
+		--btn--padding-y: var(--space-1);
+	}
+
+	&[data-size="md"] {
+		--btn--font-size: var(--size-sm);
+		--btn--padding-x: var(--space-6);
+		--btn--padding-y: var(--space-2);
+	}
+
+	&[data-size="lg"] {
+		--btn--padding-x: var(--space-8);
+		--btn--padding-y: var(--space-3);
+	}
 }

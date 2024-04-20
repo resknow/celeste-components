@@ -1,6 +1,6 @@
-{% set tag_name = href ? 'a' : 'button' %}
+{% set tagName = href ? 'a' : 'button' %}
 
-<{{ tag_name }}
+<{{ tagName }}
 	class="btn {{ class }}"
 	data-variant="{{ variant }}"
 	data-size="{{ size }}"
@@ -14,4 +14,4 @@
 		<Icon :name="icon" class="w-5 h-5" />
 	{% endif %}
 	{{ children | raw }}
-</{{ tag_name }}>
+</{{ tagName }}>

@@ -1,11 +1,13 @@
 {% set id = id | default(name) %}
 
-<div class="custom-checkbox">
+<div class="{{ type == "radio" ? "Radio" : "Checkbox" }}" {{ attributes | raw }}>
     <input
-        type="checkbox"
+        type="{{ type == "radio" ? "radio" : "checkbox" }}"
         name="{{ name }}"
         id="{{ id }}"
         {{ checked ? 'checked' : '' }}
+        x-data
+        @change="$dispatch('checkbox-changed', $event.target.checked)"
     >
     <label for="{{ id }}">{{ label }}</label>
 </div>

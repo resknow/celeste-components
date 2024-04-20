@@ -5,7 +5,7 @@ return [
     'href' => [ 'type' => 'string' ],
     'variant' => [
         'type' => 'enum',
-        'values' => [ 'primary', 'secondary', 'tertiary', 'white', 'black' ],
+        'values' => [ 'primary', 'secondary', 'tertiary', 'base', 'contrast' ],
         'default' => 'primary'
     ],
     'size' => [
