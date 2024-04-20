@@ -2,7 +2,7 @@
 
 add_filter( 'twilight.component.PostCard', function( $context ) {
 
-    if ( version_compare( $context['utils']['theme_version'], '1.1.0', '<' ) ) {
+    if ( version_compare( $context['utils']['theme_version'], '1.1.0', '>=' ) ) {
         props( 'PostCard', $context, [
             'id' => [ 'type' => 'number' ]
         ] );

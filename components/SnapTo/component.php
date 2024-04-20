@@ -2,7 +2,7 @@
 
 add_filter( 'twilight.component.SnapTo', function( $context ) {
 
-    if ( version_compare( $context['utils']['theme_version'], '1.1.0', '<' ) ) {
+    if ( version_compare( $context['utils']['theme_version'], '1.1.0', '>=' ) ) {
         /**
          * Define Prop Types and split props from the rest of the context
          */

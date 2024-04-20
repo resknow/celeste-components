@@ -1,0 +1,17 @@
+.AccordionTrigger__button {
+    display: grid;
+    grid-template-columns: 1fr 1.5rem;
+    align-items: start;
+    justify-content: space-between;
+    text-align: left;
+    width: 100%;
+}
+
+.AccordionTrigger__icon {
+    transition: rotate var(--AccordionTrigger--rotate-duration-close, 0.5s) ease;
+}
+
+.AccordionItem--open .AccordionTrigger__icon {
+    transition: rotate var(--AccordionTrigger--rotate-duration-open, 0.3s) ease;
+    rotate: var(--AccordionTrigger--rotate-open, 180deg);
+}

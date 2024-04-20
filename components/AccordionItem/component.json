@@ -1,0 +1,8 @@
+{
+	"name": "AccordionItem",
+	"version": "1.0.0",
+	"celeste_version": "1.0.0",
+	"requires": [
+		"Accordion"
+	]
+}

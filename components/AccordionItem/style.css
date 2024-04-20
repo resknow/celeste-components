@@ -1,0 +1,17 @@
+.AccordionItem {
+    border-radius: var(--AccordionItem--border-radius, var(--radius-sm));
+    display: grid;
+    border:
+        var(--AccordionItem--border-thickness, 1px)
+        var(--AccordionItem--border-style, solid)
+        var(--AccordionItem--border-color, var(--color-gray-200));
+    padding:
+        var(--AccordionItem--padding-y, var(--space-sm))
+        var(--AccordionItem--padding-x, var(--space-md));
+    grid-template-rows: auto 0fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.AccordionItem--open {
+    grid-template-rows: auto 1fr;
+}

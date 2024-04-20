@@ -1,0 +1,7 @@
+.AccordionContent {
+    overflow: hidden;
+}
+
+.AccordionContent__inner {
+    padding-block-start: var(--AccordionContent--inner-padding-y, var(--space-sm));
+}
