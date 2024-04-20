@@ -1,6 +1,6 @@
 {% set tagName = is | default('h3') %}
 
-<{{ tagName }} class="AccordionTrigger">
+<{{ tagName }} class="AccordionTrigger {{ class }}">
     <button type="button" class="AccordionTrigger__button">
         <span class="AccordionTrigger__content">{{ children | raw }}</span>
         <div class="AccordionTrigger__icon">

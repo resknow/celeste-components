@@ -1,3 +1,7 @@
-<celeste-accordion class="Accordion {{ class }}" id="{{ id ?? 'accordion' }}">
+<celeste-accordion
+    class="Accordion {{ class }}"
+    id="{{ id ?? 'accordion' }}"
+    {{ attributes | raw }}
+>
     {{ children | raw }}
 </celeste-accordion>
