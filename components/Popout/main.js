@@ -44,4 +44,4 @@ class DismissableElement extends HTMLElement {
 	}
 }
 
-customElements.get('dismissable-element') || customElements.define('dismissable-element', DismissableElement);
+customElements.get('celeste-dismissable-element') || customElements.define('celeste-dismissable-element', DismissableElement);
