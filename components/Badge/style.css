@@ -8,7 +8,7 @@
     display: inline-flex;
     align-items: center;
     gap: var(--Badge--gap, var(--space-1));
-    padding: var(--Badge--padding-y, var(--space-1)) var(--Badge--padding-x, var(--space-2));
+    padding: var(--Badge--padding-y, var(--space-half)) var(--Badge--padding-x, var(--space-2));
 }
 
 .Badge[data-icon-position="end"] {
