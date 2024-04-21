@@ -19,16 +19,15 @@ class Accordion extends HTMLElement {
 
             item.setAttribute('data-item', index);
             item.addEventListener('click', () => this.toggleItem(index));
+            item.setAttribute('aria-expanded', false);
         });
     }
 
     toggleItem(index) {
         this.items.forEach((item, i) => {
             if (i === index) {
-                item.classList.toggle('AccordionItem--open');
-                item.setAttribute('aria-expanded', item.classList.contains('AccordionItem--open'));
+                item.setAttribute('aria-expanded', item.getAttribute('aria-expanded') === 'false' ? true : false);
             } else {
-                item.classList.remove('AccordionItem--open');
                 item.setAttribute('aria-expanded', false);
             }
         });

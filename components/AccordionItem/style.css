@@ -12,6 +12,6 @@
     transition: grid-template-rows 0.3s ease-in-out;
 }
 
-.AccordionItem--open {
+.AccordionItem[aria-expanded="true"] {
     grid-template-rows: auto 1fr;
 }

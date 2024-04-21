@@ -1,0 +1,11 @@
+<{{ is }}
+    class="Badge {{ class }}"
+    data-variant="{{ variant }}"
+    data-icon-position="{{ iconPosition }}"
+    {{ attributes | raw }}
+>
+    {% if icon %}
+        <Icon :name="icon" />
+    {% endif %}
+    {{ children | raw }}
+</{{ is }}>

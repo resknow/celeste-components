@@ -22,7 +22,7 @@
     height: 1em;
 }
 
-.AccordionItem--open .AccordionTrigger__icon {
+.AccordionItem[aria-expanded="true"] .AccordionTrigger__icon {
     transform-origin: center;
     transition: rotate var(--AccordionTrigger--icon-rotate-duration-open, 0.3s) ease;
     rotate: var(--AccordionTrigger--icon-rotate-open, 180deg);

@@ -3,6 +3,6 @@
         {% if icon_exists('whatsapp') %}
             <Icon name="whatsapp" />
         {% endif %}
-        <span>WhatsApp Us</span>
+        <span>{{ children ?? 'WhatsApp Us' | raw }}</span>
     </a>
 {% endif %}

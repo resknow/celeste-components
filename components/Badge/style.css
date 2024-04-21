@@ -1,0 +1,40 @@
+.Badge {
+    background: var(--Badge--background, var(--color-primary));
+    border-radius: var(--Badge--border-radius, var(--radius-full));
+    border: var(--Badge--border-thickness, 1px) solid var(--Badge--border-color, var(--color-primary));
+    color: var(--Badge--color, var(--color-primary-contrast));
+    font-size: var(--Badge--font-size, var(--size-xs));
+    font-weight: var(--Badge--font-weight, var(--weight-bold));
+    display: inline-flex;
+    align-items: center;
+    gap: var(--Badge--gap, var(--space-1));
+    padding: var(--Badge--padding-y, var(--space-1)) var(--Badge--padding-x, var(--space-2));
+}
+
+.Badge[data-icon-position="end"] {
+    flex-direction: row-reverse;
+}
+
+.Badge[data-variant="secondary"] {
+    --Badge--background: var(--color-secondary);
+    --Badge--color: var(--color-secondary-contrast);
+    --Badge--border-color: var(--color-secondary);
+}
+
+.Badge[data-variant="tertiary"] {
+    --Badge--background: var(--color-tertiary);
+    --Badge--color: var(--color-tertiary-contrast);
+    --Badge--border-color: var(--color-tertiary);
+}
+
+.Badge[data-variant="base"] {
+    --Badge--background: var(--color-white);
+    --Badge--color: var(--color-black);
+    --Badge--border-color: var(--color-gray-200);
+}
+
+.Badge[data-variant="contrast"] {
+    --Badge--background: var(--color-black);
+    --Badge--color: var(--color-white);
+    --Badge--border-color: var(--color-black);
+}
