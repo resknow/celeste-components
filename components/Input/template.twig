@@ -1,0 +1,10 @@
+<div class="Input">
+    <label for="{{ id | default(name) }}" {{ showLabel ? '' : 'class="sr-only"' }}>{{ label }}</label>
+    <input
+        id="{{ id | default(name) }}"
+        name="{{ name }}"
+        type="{{ type }}"
+        x-data
+        {{ attributes | raw }}
+    >
+</div>
