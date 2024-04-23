@@ -1,0 +1,13 @@
+.carousel-item {
+    opacity: 0;
+}
+
+.carousel-item[data-active="true"],
+.carousel-item[data-preview="true"] {
+    opacity: 1;
+}
+
+.carousel-item[data-preview="true"] {
+    min-height: 1.5rem;
+    position: relative;
+}

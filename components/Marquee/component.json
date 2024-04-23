@@ -3,6 +3,10 @@
 	"version": "1.1.0",
 	"celeste_version": "1.1.0",
     "requires": [
-        "MarqueeItem"
+        {
+            "type": "component",
+            "name": "MarqueeItem",
+            "version": "1.0.0"
+        }
     ]
 }

@@ -1,0 +1,7 @@
+<BlockWrapper :attributes="attributes" :block="block">
+    <Carousel :selectors="fields.slide_selectors">
+        <div class="relative">
+            <InnerBlocks template="{{ template | raw }}" />
+        </div>
+    </Carousel>
+</BlockWrapper>

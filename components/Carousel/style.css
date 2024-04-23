@@ -1,0 +1,24 @@
+.Carousel__slides .acf-innerblocks-container {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.Carousel__slides .acf-innerblocks-container > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.dot-selector {
+    height: 1em;
+    width: 1em;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+
+.dot-selectors {
+    z-index: calc(infinity);
+}
+
+.dot-selector[data-active="true"] {
+    background-color: white;
+}
