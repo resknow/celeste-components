@@ -3,8 +3,20 @@
 	"version": "2.0.0",
 	"celeste_version": "1.0.0",
 	"requires": [
-		"AccordionItem",
-		"AccordionTrigger",
-		"AccordionContent"
+		{
+			"type": "component",
+			"name": "AccordionItem",
+			"version": "1.0.0"
+		},
+		{
+			"type": "component",
+			"name": "AccordionTrigger",
+			"version": "1.0.0"
+		},
+		{
+			"type": "component",
+			"name": "AccordionContent",
+			"version": "1.0.0"
+		}
 	]
 }

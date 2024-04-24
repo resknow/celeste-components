@@ -3,6 +3,10 @@
 	"version": "1.0.0",
 	"celeste_version": "1.0.0",
 	"requires": [
-		"Accordion"
+		{
+			"type": "component",
+			"name": "Accordion",
+			"version": "2.0.0"
+		}
 	]
 }
