@@ -1,14 +1,8 @@
-# Floating Contact Links
-
 ## Properties
 
 | Prop | Description |
 | --- | --- |
 | `links` | An array of links, each one should contain a `url` and `name` key |
-| `animate` | whether or not the component should slide in from the right |
-
-## Usage
-
-```html
-<FloatingContactLinks :links="globals.social_links" animate />
-```
+| `links.name` | String, usually the site name, all lowercase, also used as the icon name |
+| `links.url` | String, URL to link to |
+| `animate` | Whether or not the component should slide in from the right |

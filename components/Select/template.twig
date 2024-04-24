@@ -1,0 +1,13 @@
+<div class="Select">
+    <label for="{{ id | default(name) }}" {{ showLabel ? '' : 'class="sr-only"' }}>{{ label }}</label>
+    <div class="Select__inner relative">
+        <select
+            id="{{ id | default(name) }}"
+            name="{{ name }}"
+            {{ attributes | raw }}
+        >
+            {{ children | raw }}
+        </select>
+        <Icon :name="icon | default('caret-down')" class="Select__icon" />
+    </div>
+</div>

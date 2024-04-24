@@ -1,9 +1,9 @@
-.Carousel__slides .acf-innerblocks-container {
+.Carousel__slides {
     display: grid;
     grid-template-rows: 1fr;
 }
 
-.Carousel__slides .acf-innerblocks-container > * {
+.Carousel__slides > * {
     grid-column-start: 1;
     grid-row-start: 1;
 }

@@ -1,10 +1,17 @@
 <div class="Input">
     <label for="{{ id | default(name) }}" {{ showLabel ? '' : 'class="sr-only"' }}>{{ label }}</label>
-    <input
-        id="{{ id | default(name) }}"
-        name="{{ name }}"
-        type="{{ type }}"
-        x-data
-        {{ attributes | raw }}
-    >
+    {% if type == "textarea" %}
+        <textarea
+            id="{{ id | default(name) }}"
+            name="{{ name }}"
+            {{ attributes | raw }}
+        ></textarea>
+    {% else %}
+        <input
+            id="{{ id | default(name) }}"
+            name="{{ name }}"
+            type="{{ type }}"
+            {{ attributes | raw }}
+        >
+    {% endif %}
 </div>

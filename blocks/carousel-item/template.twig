@@ -1,7 +1,3 @@
-<div
-    class="carousel-item grid h-full w-full col-start-1 row-start-1 transition duration-[1.5s]"
-    tabindex="-1"
-    data-preview="{{ is_preview ? 'true' : 'false' }}"
->
+<CarouselItem :preview="is_preview">
     <InnerBlocks />
-</div>
+</CarouselItem>
