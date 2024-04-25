@@ -29,6 +29,20 @@
                 "withDots": "Dots"
 			},
 			"default_value": "3"
+        },
+        {
+            "label": "Autoplay",
+            "name": "autoplay",
+            "type": "true_false",
+            "default_value": false,
+            "ui": true
+        },
+        {
+            "label": "Autoplay Speed",
+            "instructions": "Time each slide should stay on screen, in seconds",
+            "name": "autoplay_speed",
+            "type": "number",
+            "default_value": 5
         }
     ],
     "acf": {

@@ -14,6 +14,9 @@ document.addEventListener('alpine:init', () => {
                 this.items = this.$el.querySelectorAll('.carousel-item');
                 this.slideCount = this.items.length;
 
+                this.autoplay = this.$el.getAttribute('data-autoplay') === 'true';
+                this.autoplaySpeed = this.$el.getAttribute('data-autoplay-speed');
+
                 if (this.items) {
 
                     this.dots = this.$el.querySelector('.dot-selectors');
@@ -40,7 +43,9 @@ document.addEventListener('alpine:init', () => {
                     }.bind(this))
                 }
 
-                this.timer = setInterval(this.next.bind(this), 5000);
+                if (this.autoplay) {
+                    this.timer = setInterval(this.next.bind(this), 5000);
+                }
 
                 this.$watch('activeSlide', () => {
                     this.items.forEach(function(item, index) {
@@ -58,11 +63,15 @@ document.addEventListener('alpine:init', () => {
             },
 
             next() {
-                clearInterval(this.timer);
+                // Clear the timer if the user manually changes the slide
+                this.autoplay && clearInterval(this.timer);
 
                 this.activeSlide = this.activeSlide === this.slideCount -1 ? 0 : this.activeSlide + 1;
 
-                this.timer = setInterval(this.next.bind(this), 5000);
+                // Restart the timer if autoplay is enabled
+                if (this.autoplay) {
+                    this.timer = setInterval(this.next.bind(this), 5000);
+                }
             },
 
             prev() {

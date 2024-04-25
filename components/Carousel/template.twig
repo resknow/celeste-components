@@ -1,4 +1,10 @@
-<div class="Carousel relative" x-data="carousel">
+<div
+    class="Carousel relative"
+    x-data="carousel"
+    data-preview="{{ preview ? 'true' : 'false' }}"
+    data-autoplay="{{ autoplay ? 'true' : 'false' }}"
+    data-autoplay-speed="{{ autoplaySpeed }}"
+>
 
     <div class="Carousel__slides">
         {{ children | raw }}
