@@ -1,31 +1,35 @@
 <BlockWrapper :attributes="attributes" :block="block">
 	{% if fields.type == "textarea" %}
-		<Goform.TextareaInput
+		<Input
 			:name="fields.name"
 			:label="fields.label"
 			:required="fields.required"
+			type="textarea"
 		/>
 	{% elseif fields.type == "select" %}
-		<Goform.SelectInput
+		<Select
 			:name="fields.name"
 			:label="fields.label"
 			:required="fields.required"
-			:choices="fields.choices"
-		/>
+		>
+			{% for choice in fields.choices %}
+				<option value="{{ choice.value }}">{{ choice.label }}</option>
+			{% endfor %}
+		</Select>
 	{% elseif fields.type == "hidden" %}
 
 		{% if is_preview %}
 			<p class="border border-dashed rounded-xs py-1 px-3 text-gray-600 font-mono text-sm">Hidden Input <code>`{{ fields.name }}`</code></p>
 		{% endif %}
 
-		<Goform.HiddenInput
-			:name="fields.name"
-			:label="fields.label"
-			:type="fields.type"
-			:required="fields.required"
-		/>
+		<input
+			type="hidden"
+			name="{{ fields.name }}"
+			value="{{ fields.value }}"
+			{{ fields.required ? 'required' : '' }}
+		>
 	{% else %}
-		<Goform.TextInput
+		<Input
 			:name="fields.name"
 			:label="fields.label"
 			:type="fields.type"

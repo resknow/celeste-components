@@ -1,5 +1,17 @@
 {
 	"name": "Goform",
-	"version": "1.0.0",
-	"celeste_version": "1.0.0"
+	"version": "1.1.0",
+	"celeste_version": "1.0.0",
+	"requires": [
+		{
+			"type": "component",
+			"name": "Input",
+			"version": "1.1.0"
+		},
+		{
+			"type": "component",
+			"name": "Select",
+			"version": "1.1.0"
+		}
+	]
 }

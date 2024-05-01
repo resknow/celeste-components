@@ -1,5 +1,12 @@
 <div class="Input">
-    <label for="{{ id | default(name) }}" {{ showLabel ? '' : 'class="sr-only"' }}>{{ label }}</label>
+    <div class="flex flex-wrap gap-xs">
+        <label for="{{ id | default(name) }}" {{ showLabel ? '' : 'class="sr-only"' }}>{{ label }}</label>
+        {% if not required %}
+            <span class="Input__optional-marker text-xs uppercase text-gray-500 font-normal">
+                Optional
+            </span>
+        {% endif %}
+    </div>
     {% if type == "textarea" %}
         <textarea
             id="{{ id | default(name) }}"

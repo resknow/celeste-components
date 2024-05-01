@@ -38,6 +38,11 @@
 			"required": "true"
 		},
 		{
+			"label": "Default Value",
+			"name": "value",
+			"type": "text"
+		},
+		{
 			"label": "Required?",
 			"name": "required",
 			"type": "true_false",
