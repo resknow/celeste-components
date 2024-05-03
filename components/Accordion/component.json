@@ -1,6 +1,7 @@
 {
 	"name": "Accordion",
 	"version": "2.0.0",
+	"category": "UI",
 	"celeste_version": "1.0.0",
 	"requires": [
 		{

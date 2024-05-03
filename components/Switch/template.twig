@@ -1,0 +1,27 @@
+<div
+    class="Switch {{ class }}"
+    x-data="{ checked: {{ checked ? 1 : 0 }}, isReady: false }"
+    x-init="isReady = true"
+    @click="checked = !checked; $dispatch('toggle-change', { checked: checked })"
+>
+    <button
+        aria-controls="{{ id | default(name) }}"
+        type="button"
+        class="hidden"
+        :class="{ 'flex bg-gray-100 rounded-full w-12 p-half cursor-pointer border': isReady, 'hidden': !isReady }"
+    >
+        <div
+            class="pointer-events-none rounded-full w-5 h-5 transition duration-150 ease-in-out transform"
+            :class="{ 'bg-secondary translate-x-5': checked, 'bg-gray-500': !checked }"
+        ></div>
+    </button>
+    <input
+        type="checkbox"
+        name="{{ name }}"
+        id="{{ id | default(name) }}"
+        value="1"
+        :checked="{{ bind | default('checked') }}"
+        :class="{ 'hidden': isReady }"
+        {{ attributes | raw }}
+    />
+</div>
