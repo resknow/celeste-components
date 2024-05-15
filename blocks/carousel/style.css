@@ -1,0 +1,11 @@
+/**
+ * Block Alignment Fix
+ *
+ * For some reason WordPress doesn't want to let the carousel block be full width,
+ * so we're forcing the issue 🥴
+ *
+ * This was Haley's idea
+ */
+.wp-block-acf-carousel {
+    max-width: unset !important;
+}
