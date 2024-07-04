@@ -1,0 +1,25 @@
+.Compare {
+  /* Or you can set the two independently: */
+  --track-color: var(--color-white);
+  --thumb-color: var(--color-gray-700);
+  /* Background of the thumb */
+  --thumb-background: var(--color-white);
+  /* Size of the thumb */
+  --thumb-size: var(--size-3xl);
+  /* Thickness of the bar */
+  --bar-size: var(--space-1);
+  /* Touch-thickness of the bar */
+  --bar-touch-size: 30px;
+
+  overflow: clip;
+}
+
+.Compare [class*="styles_scrubber"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Compare > * {
+    width: 100%;
+}
