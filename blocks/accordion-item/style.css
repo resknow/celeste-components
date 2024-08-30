@@ -1,7 +1,7 @@
-.wp-block-acf-faq-item .acf-innerblocks-container > * {
+.wp-block-acf-accordion-item .acf-innerblocks-container > * {
 	max-width: 47rem;
 }
 
-.wp-block-acf-faq-item .acf-innerblocks-container > * + * {
+.wp-block-acf-accordion-item .acf-innerblocks-container > * + * {
 	margin-block-start: var(--space-4);
 }

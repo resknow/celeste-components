@@ -1,3 +1,3 @@
-.wp-block-acf-faqs .acf-innerblocks-container > * + * {
+.wp-block-acf-accordion .acf-innerblocks-container > * + * {
     margin-block-start: var(--space-xs);
 }
