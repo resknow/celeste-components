@@ -1,0 +1,10 @@
+<BlockWrapper :attributes="attributes" :block="block">
+    <AccordionItem>
+        <AccordionTrigger>{{ fields.heading }}</AccordionTrigger>
+        <AccordionContent>
+            <div class="wp-block-group is-style-prose mt-xs">
+                <InnerBlocks />
+            </div>
+        </AccordionContent>
+    </AccordionItem>
+</BlockWrapper>
